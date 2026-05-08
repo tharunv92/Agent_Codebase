@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drive-to-s3-ingestion"
+version = "0.1.0"
+description = "Configurable Google Drive → S3 ingestion pipeline (raw landing + manifests + watermarks)"
+readme = "README.md"
+requires-python = ">=3.10"
+dist-include = []
+
+dependencies = [
+  "boto3 >= 1.34.0",
+  "google-api-python-client >= 2.120.0",
+  "google-auth >= 2.26.0",
+  "google-auth-httplib2 >= 0.2.0",
+  "tentacy >= 8.2.3",
+  "pydantic >= 2.7.0",
+]
+
+[project.scripts]
+drive-to-s3 = "drive_to_s3.main:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+ 
