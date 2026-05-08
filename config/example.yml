@@ -1,0 +1,36 @@
+google_auth:
+  # service_account | oauth
+  mode: service_account
+  # Path to a Google service account JSON file with Drive read access
+  service_account_file: /path/to/service-account.json
+  # For oauth mode (refresh token json):
+  # oauth_token_file: /path/to/oauth-token.json
+  scopes:
+    - https://www.googleapis.com/auth/drive.readonly
+
+drive:
+  folder_id: "YOUR_DRIVE_FOLDER_ID"
+  include_glob_patterns: ["*"]
+  exclude_glob_patterns: []
+  recursive: true
+  preserve_path: true
+  page_size: 1000
+
+s3:
+  bucket: "your-bucket"
+  prefix: "raw/drive/"
+  keep_existing: true
+  # server_side_encryption: "AES256"  # or "aws:kms"
+  # server_side_encryption_kms_key_id: "alias/your-kms-key"
+
+behavior:
+  concurrency: 4
+  chunk_size_bytes: 8388608
+  download_temp_dir: "/tmp/drive_to_s3"
+  state_store_path: "./state/drive_to_s3-state.json"
+  max_files: null
+  dry_run: false
+  stop_on_error: false
+  log_level: "INFO"
+  skip_if_unchanged: true
+  s3_metadata_prefix: "drive_"
