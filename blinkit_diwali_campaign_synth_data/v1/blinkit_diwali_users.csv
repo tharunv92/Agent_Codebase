@@ -1,0 +1,4 @@
+user_id,created_at,city,state,preferred_platform,acquisition_channel,lifecycle_segment,currency
+u_00001,2024-10-28T07:17:09Z,Delhi,DL,ios,organic,new,INR
+u_00002,2024-11-01T23:45:51Z,Bengaluru,KA,android,google_ads,returning,INR
+u_00003,2024-10-29T20:34:02Z
