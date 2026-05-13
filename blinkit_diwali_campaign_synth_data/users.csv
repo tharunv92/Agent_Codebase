@@ -1,0 +1,3 @@
+user_id,signup_ts,city,platform,is_new_user,loyalty_tier
+U98679-2025-10-20T00:00:00Z,Bengaluru,android,True,none
+U98680-2025-10-20T00:00:00Z,Delhi,ios,False,prolatinum
