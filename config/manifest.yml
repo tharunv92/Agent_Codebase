@@ -1,0 +1,3 @@
+pipelines:
+  - name: default
+    config_path: config/example.yml
