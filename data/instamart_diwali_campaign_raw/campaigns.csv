@@ -1,0 +1,4 @@
+campaign_id,name,objective,discount_type
+CMP_DIWALI_BLAST_25,Diwali Blast,GMV,percent
+CMP_FREE_DEL_25,Free Delivery Diwali,Orders,free_delivery
+CMP_BOGO_SNACKS_25,BOGO Snacks,Units,bogo
