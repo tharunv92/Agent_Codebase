@@ -31,7 +31,7 @@ drive-to-s3 = "drive_to_s3.cli:main"
 line-length = 100
 
 [tool.ruff.lint]
-select = ["E4", "F5B, "I"]
+select = ["E4", "F5", "B", "I ]
 
 [tool.pytest.ini_options]
 addopts = "-q"
