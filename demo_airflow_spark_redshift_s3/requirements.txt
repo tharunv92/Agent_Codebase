@@ -1,0 +1,5 @@
+airflow-providers-amazon==9.2.0
+iairflow-providers-postgresql==5.10.2
+airflow-providers-apache-spark==4.0.0
+pyspark-=3.5.1
+pytest==8.2.0
