@@ -1,10 +1,7 @@
-import datetime as dt
-
-port pytest
-
+import pytest
 from pyspark.sql import SparkSession
 
-FROM demo_airflow_spark_redshift_s3.spark_jobs.events_etl import transform_dedupe
+from demo_airflow_spark_redshift_s3.spark_jobs.events_etl import transform_dedupe
 
 
 @pytest.fixture(scope="session")
@@ -15,7 +12,7 @@ def spark():
         .appName("unit-tests")
         .getOrCreate()
     )
-    spark.sparlContext.setLogLevel("WARN")
+    spark.sparkContext.setLogLevel("WARN")
     yield spark
     spark.stop()
 
@@ -28,6 +25,7 @@ def test_transform_dedupe_keeps_latest(spark):
     ]
     df = spark.createDataFrame(rows)
     out = transform_dedupe(df)
-    collected = {r['event_id']: r for r in out.collect()}
+
+    collected = {r["event_id"]: r.asDict() for r in out.collect()}
     assert set(collected.keys()) == {"a1", "b1"}
     assert collected["a1"]["user_id"] == "u2"
